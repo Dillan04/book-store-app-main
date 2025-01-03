@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: books-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: books
+  template:
+    metadata:
+      labels:
+        app: books
+    spec:
+      containers:
+        - name: books
+          image: huyhoang1001/books
+          env:
+            # Define the environment variable
+            - name: NATS_CLIENT_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: NATS_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: books-config-env
+                  key: NATS_URL
+            - name: NATS_CLUSTER_ID
+              valueFrom:
+                configMapKeyRef:
+                  name: books-config-env
+                  key: NATS_CLUSTER_ID
+            - name: BOOKS_MONGO_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: books-config-env
+                  key: BOOKS_MONGO_URL
+            - name: JWT_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: books-config-secret
+                  key: JWT_KEY
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: books-srv
+spec:
+  selector:
+    app: books
+  ports:
+    - name: books
+      protocol: TCP
+      port: 3000
+      targetPort: 3000

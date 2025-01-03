@@ -1,0 +1,15 @@
+/auth/node_modules/
+/client/.next/
+/client/node_modules
+/common/build/
+/common/node_modules/
+/books/node_modules/
+node_modules
+.idea/
+/orders/build/
+/books/logs/
+/auth/logs/
+/expiration/logs/
+/orders/logs/
+/payments/logs/
+

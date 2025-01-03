@@ -1,0 +1,8 @@
+{
+    "cloudcode.dependencyPaths": {
+        "skaffold": "",
+        "kubectl": "",
+        "minikube": ""
+    },
+    "npm-intellisense.scanDevDependencies": true
+}
