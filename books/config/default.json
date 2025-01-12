@@ -1,1 +1,11 @@
-{  "mongoUrl": "mongodb://127.0.0.1:27017/books-db",  "port": 3000,  "jwt_key": "hoang_key",  "natsConfig": {    "clusterId": "books",    "clientId": "book-client",    "url": "http://localhost:4222",    "queueGroupName": "books-service"  }}
+{
+  "mongoUrl": "mongodb+srv://dillanhammond7:<dillanmongo1234>@cluster0.kltgz.mongodb.net/book-store-app?retryWrites=true&w=majority&appName=Cluster0",
+  "port": 3000,
+  "jwt_key": "hoang_key",
+  "natsConfig": {
+    "clusterId": "books",
+    "clientId": "book-client",
+    "url": "http://localhost:4222",
+    "queueGroupName": "books-service"
+  }
+}

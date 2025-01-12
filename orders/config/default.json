@@ -1,1 +1,12 @@
-{  "mongoUrl": "mongodb://127.0.0.1:27017/orders-db",  "port": 3000,  "jwt_key": "hoang_key",  "expiration_window_seconds": 1,  "natsConfig": {    "clusterId": "books",    "clientId": "order-client",    "url": "http://localhost:4222",    "queueGroupName": "order-service"  }}
+{
+  "mongoUrl": "mongodb+srv://dillanhammond7:<dillanmongo1234>@cluster0.kltgz.mongodb.net/book-store-app?retryWrites=true&w=majority&appName=Cluster0",
+  "port": 3000,
+  "jwt_key": "hoang_key",
+  "expiration_window_seconds": 1,
+  "natsConfig": {
+    "clusterId": "books",
+    "clientId": "order-client",
+    "url": "http://localhost:4222",
+    "queueGroupName": "order-service"
+  }
+}
